@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{.title}}</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body style="background-color: #d2d2d2">
+    <div class="container" style="margin-top: 20px">
+      <div class="row" style="height: 200px">
+        <div class="col-3">
+          <div class="box">
+            <div>
+              <p class="time" id="time">1:20:10AM</p>
+              <p class="date" id="date">1 OCTOBER 2022</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="box">
+            <div id="app">
+              <div class="text-center">
+                <div class="countdown ml-auto mr-auto" id="countdown">
+                  <span id="hours" style="font-size: 40px">00</span> :
+                  <span id="mins" style="font-size: 40px">00</span> :
+                  <span id="secs" style="font-size: 40px">00</span>
+                </div>
+              </div>
+              <div class="row" style="height: 50px">
+                <div class="col-4">
+                  <button id="start">
+                    <i class="fa fa-play" style="font-size: 40px"></i>
+                  </button>
+                </div>
+                <div class="col-4 pause">
+                  <button id="pause">
+                    <i class="fa fa-pause" style="font-size: 40px"></i>
+                  </button>
+                </div>
+                <div class="col-4 stop">
+                  <button id="stop">
+                    <i class="fa fa-stop" style="font-size: 40px"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex align-items-center w-20">
+                <input
+                  type="text"
+                  class="form-control ml2"
+                  id="timerValue"
+                  placeholder="Countdown"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="box">
+            <div>
+              <div style="height: 50px; display: flex">
+                <i
+                  class="fa fa-thermometer-full"
+                  aria-hidden="true"
+                  style="font-size: 40px; margin: 10px"
+                ></i>
+                <p
+                  style="
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    font-size: 40px;
+                  "
+                  id="celcius"
+                >
+                  100
+                </p>
+                <span style="font-size: 40px">&#8451;</span>
+              </div>
+              <div style="height: 50px; display: flex">
+                <i
+                  class="fa fa-tint"
+                  aria-hidden="true"
+                  style="font-size: 40px; margin: 10px"
+                ></i>
+                <p
+                  style="
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    font-size: 40px;
+                  "
+                  id="humidity"
+                >
+                  100
+                </p>
+                <p
+                  style="
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    font-size: 40px;
+                  "
+                >
+                  %
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="box"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div
+        class="video"
+        style="
+          border: 10px solid #efefef;
+          position: relative;
+          overflow: hidden;
+          background: #efefef;
+          margin: 20px auto;
+          width: 768px;
+          height: 550px;
+        "
+      >
+        <div
+          class="images"
+          style="
+            position: absolute;
+            width: 800px;
+            animation-name: slider;
+            animation-direction: 16s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            -webkit-animation-name: slider;
+            -webkit-animation-duration: 16s;
+            -webkit-animation-timing-function: ease-in-out;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-name: slider;
+            -moz-animation-duration: 16s;
+            -moz-animation-timing-function: ease-in-out;
+            -moz-animation-iteration-count: infinite;
+            -o-animation-name: slider;
+            -o-animation-duration: 16s;
+            -o-animation-timing-function: ease-in-out;
+            -o-animation-iteration-count: infinite;
+          "
+        >
+          <img src="1.jpg" alt="" style="height: 100%; width: 100%" />
+          <img src="2.jpg" alt="" style="height: 100%; width: 100%" />
+          <img src="3.jpg" alt="" style="height: 100%; width: 100%" />
+          <img src="4.jpg" alt="" style="height: 100%; width: 100%" />
+        </div>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <script>
+      const startBtn = document.getElementById("start");
+      const stopBtn = document.getElementById("staop");
+      const pauseBtn = document.getElementById("pause");
+      const timerValue = document.getElementById("timerValue");
+      const countdownContainer = document.getElementById("countdown");
+      const hours = document.getElementById("hours");
+      const mins = document.getElementById("mins");
+      const secs = document.getElementById("secs");
+
+      let COUNTDOWN = 0;
+      let startTime = 0;
+      let timerFn = null;
+
+      stopBtn.onclick = function (e) {
+        e.preventDefault();
+        stopTimer();
+      };
+
+      startBtn.onclick = function (e) {
+        e.preventDefault();
+
+        COUNTDOWN = parseInt(timerValue.value);
+        if (COUNTDOWN > 0) {
+          startTime = Math.ceil(Date.now() / 1000);
+          timerFn = setInterval(updateTimer, 1000);
+        }
+      };
+      function stopTimer() {
+        clearInterval(timerFn);
+        timerFn = null;
+      }
+
+      function updateTimer() {
+        const current = Math.ceil(Date.now() / 1000);
+
+        const remaining = COUNTDOWN - current + startTime;
+        const timerValue = getTimeValues(remaining);
+
+        hours.innerHTML = ("00" + timerValues.hours).substr(-2);
+        mins.innerHTML = ("00" + timerValues.mins).substr(-2);
+        secs.innerHTML = ("00" + timerValues.secs).substr(-2);
+
+        if (remaining <= 0) {
+          alert("TIMES UP");
+          stopTimer();
+        }
+      }
+      function getTimeValues(referenceTime) {
+        const hours = parseInt(referenceTime / 3600);
+        const mins = parseInt((referenceTime - hours * 3600) / 60);
+        const secs = referenceTime - hours * 3600 - mins * 60;
+
+        return { hours, mins, secs };
+      }
+    </script>
+
+    <script id="MainScript">
+      var firebaseConfig = {
+        apiKey: "AIzaSyA-w5dw4jaOlokCD6u8YxejMqCtkz9MQZc",
+        authDomain: "esp32dht22-b2db7.firebaseapp.com",
+        databaseURL: "https://esp32dht22-b2db7-default-rtdb.firebaseio.com",
+        projectId: "esp32dht22-b2db7",
+        storageBucket: "esp32dht22-b2db7.appspot.com",
+        messagingSenderId: "28913875644",
+        appId: "1:28913875644:web:669826ec9643768dd9aeb9",
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      var temp = document.getElementById("celcius");
+      var hum = document.getElementById("humidity");
+      var dbref = firebase.database().ref().child("ESP32/TEMPERATURE/");
+      dbref.on("value", (snap) => (temp.innerText = snap.val()));
+      var dbref1 = firebase.database().ref().child("ESP32/HUMIDITY/");
+      dbref1.on("value", (snap) => (hum.innerText = snap.val()));
+    </script>
+
+    <script type="text/javascript">
+      const getCurrentTimeDate = () => {
+        let currentTimeDate = new Date();
+
+        var weekday = new Array(7);
+        weekday[0] = "SUNDAY";
+        weekday[1] = "MONDAY";
+        weekday[2] = "TUESDAY";
+        weekday[3] = "WEDNESDAY";
+        weekday[4] = "THURSDAY";
+        weekday[5] = "FRIDAY";
+        weekday[6] = "SATURDAY";
+
+        var month = new Array();
+        month[0] = "JANUARY";
+        month[1] = "FEBRUARY";
+        month[2] = "MARCH";
+        month[3] = "APRIL";
+        month[4] = "MAY";
+        month[5] = "JUNE";
+        month[6] = "JULY";
+        month[7] = "AUGUST";
+        month[8] = "SEPTEMBER";
+        month[9] = "OCTOBER";
+        month[10] = "NOVEMBER";
+        month[11] = "DECEMBER";
+
+        var hours = currentTimeDate.getHours();
+        var minutes = currentTimeDate.getMinutes();
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+
+        var AMPM = hours >= 12 ? "PM" : "AM";
+
+        var seconds = currentTimeDate.getSeconds();
+
+        if (hours === 12) {
+          hours = 12;
+        } else {
+          hours = hours % 12;
+        }
+
+        var currentTime = `${hours}:${minutes}:${seconds} ${AMPM}`;
+        var currentDay = weekday[currentTimeDate.getDay()];
+
+        var currentDate = currentTimeDate.getDate();
+        var currentMonth = month[currentTimeDate.getMonth()];
+        var currentYear = currentTimeDate.getFullYear();
+
+        var fullDate = `${currentDay}, ${currentDate} ${currentMonth} ${currentYear}`;
+
+        document.getElementById("time").innerHTML = currentTime;
+        document.getElementById("date").innerHTML = fullDate;
+
+        setTimeout(getCurrentTimeDate, 500);
+      };
+      getCurrentTimeDate();
+      //slideShow();
+    </script>
+    <script>
+      var indexValue = 0;
+      function slideShow() {
+        setTimeout(slideShow, 2500);
+        var x;
+        const img = document.querySelectorAll("img");
+        for (x = 0; x < img.length; x++) {
+          img[x].style.display = "";
+        }
+        indexValue++;
+        if (index > img.length) {
+          indexValue = 1;
+        }
+        img[indexValue - 1].style.display = "block";
+      }
+      slideShow();
+    </script>
+  </body>
+</html>
